@@ -1,11 +1,11 @@
 const sumAll = function(num1, num2) {
-    if (((num1 || num2) < 0)) {
+    if (((num1 || num2) < 0) || ((num1 != Math.floor(num1)) || (num2 != Math.floor(num2)))  || ((typeof num1) != (typeof num2))) {
         return "ERROR"
     } else {
         if (num2 > num1) {
-            let total = num1
+            let total = num1;
             for (i = num1 +1; i <= num2; i++) {
-                total += i
+                total += i;
             } return total
         } else {
             let total = num2
