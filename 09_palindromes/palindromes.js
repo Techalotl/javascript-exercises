@@ -1,21 +1,10 @@
-const palindromes = function (word, signs = ["!", ",","."," "]) {
-    let reverseWord = []
-    let newWord = []
-    newWord = [...word.toLowerCase()]
-    let onlyLetters = []
-    newWord.forEach((letter => {
-        if (!signs.includes(letter)) {
-            onlyLetters.push(letter);
-        } 
-    }))
-    reverseWord = onlyLetters.toReversed();
-    if (reverseWord.toString() === onlyLetters.toString()) {
-        return true;
-    } else {
-        return false;
-    }
+const palindromes = function (string) {
+    const alphanumerical = "1234567890abcdefghijklmnopqrstuvwxyz";
+            let newString = string.toLowerCase().split("").filter(character => alphanumerical.includes(character)).join("");
+            let reverseString = newString.split("").reverse().join("");
 
-    }
+            return(reverseString === newString)
+}
 
 // Do not edit below this line
 module.exports = palindromes;
